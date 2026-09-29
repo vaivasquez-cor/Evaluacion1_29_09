@@ -17,6 +17,9 @@ public abstract class Bicleta {
     }
 
     public void setCodigo(String codigo) {
+        if(codigo.isBlank() || codigo.isEmpty()){
+            throw new IllegalArgumentException("Código no puede ser nulo o vacio");
+        }
         this.codigo = codigo;
     }
 
@@ -25,6 +28,9 @@ public abstract class Bicleta {
     }
 
     public void setAnioFabricacion(int anioFabricacion) {
+        if(anioFabricacion<2000 || anioFabricacion>2026){
+            throw new IllegalArgumentException("El año de fabricación debe encontrarse entre 2000 y 2026");
+        }
         this.anioFabricacion = anioFabricacion;
     }
 
@@ -33,6 +39,9 @@ public abstract class Bicleta {
     }
 
     public void setPeso(float peso) {
+        if(peso<=0){
+            throw new IllegalArgumentException("Peso debe ser mayor a 0");
+        }
         this.peso = peso;
     }
 
