@@ -25,7 +25,11 @@ public class BicicletaMontanya extends Bicleta{
     }
 
     @Override
-    public int costoMantencion() {
+    public double costoMantencion() {
+        int costoBaseM=30000;//3600=34500
+        if (cantidadSuspensiones>1){
+            return costoBaseM*1.15;
+        }
         return 0;
     }
 

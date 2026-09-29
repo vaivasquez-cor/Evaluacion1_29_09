@@ -53,5 +53,5 @@ public abstract class Bicleta {
                 ", peso=" + peso +
                 '}';
     }
-    public abstract int costoMantencion();//devuelve en pesos el valor de mantencion
+    public abstract double costoMantencion();//devuelve en pesos el valor de mantencion
 }

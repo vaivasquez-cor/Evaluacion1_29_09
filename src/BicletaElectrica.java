@@ -37,8 +37,12 @@ public class BicletaElectrica extends Bicleta{
     }
 
     @Override
-    public int costoMantencion() {
-        return 0;
+    public double costoMantencion() {
+        int costoBaseM=45000;
+        if (!bateriaCertificada){//+11250=56250
+            return costoBaseM*1.25;
+        }
+        return costoBaseM;
     }
 
 }
