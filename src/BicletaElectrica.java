@@ -1,11 +1,13 @@
-public class BicletaElectrica extends Bicleta{
+public class BicletaElectrica extends Bicicleta implements ConGarantiaExtendida{
     private int kilometros;
     private boolean bateriaCertificada;
+    private boolean garantiaEx;
+
 
     public BicletaElectrica() {
     }
 
-    public BicletaElectrica(String codigo, int anioFabricacion, float peso, int kilometros, boolean bateriaCertificada) {
+    public BicletaElectrica(String codigo, int anioFabricacion, double peso, int kilometros, boolean bateriaCertificada) {
         super(codigo, anioFabricacion, peso);
         this.kilometros = kilometros;
         this.bateriaCertificada = bateriaCertificada;
@@ -28,11 +30,20 @@ public class BicletaElectrica extends Bicleta{
         this.bateriaCertificada = bateriaCertificada;
     }
 
+    public boolean isGarantiaEx() {
+        return garantiaEx;
+    }
+
+    public void setGarantiaEx(boolean garantiaEx) {
+        this.garantiaEx = garantiaEx;
+    }
+
     @Override
     public String toString() {
-        return super.toString()+"BicletaElectrica{" +
-                "kilometros=" + kilometros +
-                ", bateriaCertificada=" + bateriaCertificada +
+        return super.toString()+"Tipo: BicletaElectrica{" +
+                "Autonomia=" + kilometros +
+                ", bateriaCertificada=" + (bateriaCertificada?"Si":"No")+
+                ", garantiaEx=" + (garantiaEx?"Si":"No") +
                 '}';
     }
 
@@ -45,4 +56,15 @@ public class BicletaElectrica extends Bicleta{
         return costoBaseM;
     }
 
+    @Override
+    public boolean consultarGarantiaExtendida() {
+        return garantiaEx;
+    }
+
+    @Override
+    public void activarGarantia() {
+        if(!consultarGarantiaExtendida()){//osea que es falsa
+            garantiaEx=true;
+        }
+    }
 }

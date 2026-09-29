@@ -1,15 +1,15 @@
-public abstract class Bicleta {
+public abstract class Bicicleta {
     protected String codigo;
     protected int anioFabricacion;
-    protected float peso;
+    protected double peso;
 
-    public Bicleta() {
+    public Bicicleta() {
     }
 
-    public Bicleta(String codigo, int anioFabricacion, float peso) {
-        this.codigo = codigo;
-        this.anioFabricacion = anioFabricacion;
-        this.peso = peso;
+    public Bicicleta(String codigo, int anioFabricacion, double peso) {
+        setCodigo(codigo);
+        setAnioFabricacion(anioFabricacion);
+        setPeso(peso);
     }
 
     public String getCodigo() {
@@ -34,11 +34,11 @@ public abstract class Bicleta {
         this.anioFabricacion = anioFabricacion;
     }
 
-    public float getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(double peso) {
         if(peso<=0){
             throw new IllegalArgumentException("Peso debe ser mayor a 0");
         }
@@ -47,11 +47,13 @@ public abstract class Bicleta {
 
     @Override
     public String toString() {
-        return "Bicleta{" +
+        return "Bicicleta{" +
                 "codigo='" + codigo + '\'' +
                 ", anioFabricacion=" + anioFabricacion +
                 ", peso=" + peso +
                 '}';
     }
     public abstract double costoMantencion();//devuelve en pesos el valor de mantencion
+
+
 }

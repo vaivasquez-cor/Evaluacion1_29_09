@@ -1,10 +1,10 @@
-public class BicicletaMontanya extends Bicleta{
+public class BicicletaMontanya extends Bicicleta{
     private int cantidadSuspensiones;
 
     public BicicletaMontanya() {
     }
 
-    public BicicletaMontanya(String codigo, int anioFabricacion, float peso, int cantidadSuspensiones) {
+    public BicicletaMontanya(String codigo, int anioFabricacion,  double peso, int cantidadSuspensiones) {
         super(codigo, anioFabricacion, peso);
         this.cantidadSuspensiones = cantidadSuspensiones;
     }
@@ -19,7 +19,7 @@ public class BicicletaMontanya extends Bicleta{
 
     @Override
     public String toString() {
-        return super.toString()+"BicicletaMontanya{" +
+        return super.toString()+"Tipo : BicicletaMontanya{" +
                 "cantidadSuspensores=" + cantidadSuspensiones +
                 '}';
     }
